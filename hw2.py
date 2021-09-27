@@ -76,6 +76,8 @@ def save_report():
         for row in department_reports:
             writer.writerow(row)
 
+    print('Отчет сохранен в файл report.csv\n')
+
 
 if __name__ == '__main__':
     while True:
