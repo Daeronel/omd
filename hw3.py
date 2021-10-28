@@ -1,3 +1,6 @@
+from collections import Counter
+
+
 class CountVectorizer():
     """
     Класс содержит следующие параметры:
@@ -10,26 +13,35 @@ class CountVectorizer():
     """
 
     def __init__(self):
-        self.corpus = []
         self.feature_names = []
-        self.count_matrix = []
 
     def fit_transform(self, corpus: list) -> list:
+        lower_corpus = self.fit(corpus)
+        count_matrix = self.transform(lower_corpus)
+
+        return count_matrix
+
+    def fit(self, corpus: list) -> list:
         feature_names = set()
+        lower_corpus = []
         for line in corpus:
             new_line = line.lower().split()
-            self.corpus.append(new_line)
+            lower_corpus.append(new_line)
             for word in new_line:
                 feature_names.add(word)
-
         self.feature_names = list(feature_names)
 
-        self.count_matrix = []
-        for line_num, line in enumerate(self.corpus):
-            self.count_matrix.append([])
+        return lower_corpus
+
+    def transform(self, lower_corpus: list) -> list:
+        count_matrix = []
+        for line_num, line in enumerate(lower_corpus):
+            count_matrix.append([])
+            counter = Counter(line)
             for word in self.feature_names:
-                self.count_matrix[line_num].append(line.count(word))
-        return self.count_matrix
+                count_matrix[line_num].append(counter.get(word, 0))
+
+        return count_matrix
 
     def get_feature_names(self) -> list:
         return self.feature_names
