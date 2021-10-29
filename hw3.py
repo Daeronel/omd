@@ -4,9 +4,6 @@ from collections import Counter
 class CountVectorizer():
     """Класс содержит следующие параметры:
     feature_names - список уникальных слов в corpus(исходный текст)
-    и методы:
-    fit_transform - формирует матрицу count_matrix(терм-документная матрица для corpus)
-    get_feature_names - возвращает feature_names
     """
 
     def __init__(self):
