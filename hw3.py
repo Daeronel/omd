@@ -2,26 +2,29 @@ from collections import Counter
 
 
 class CountVectorizer():
-    """
-    Класс содержит следующие параметры:
-    corpus - исходный текст
-    feature_names - список уникальных слов в corpus
-    count_matrix - терм-документная матрица для corpus
+    """Класс содержит следующие параметры:
+    feature_names - список уникальных слов в corpus(исходный текст)
     и методы:
-    fit_transform - формирует матрицу с количеством вхождений слов из feature_names в текст
-    get_feature_names - возвращает список уникальных слов из corpus
+    fit_transform - формирует матрицу count_matrix(терм-документная матрица для corpus)
+    get_feature_names - возвращает feature_names
     """
 
     def __init__(self):
         self.feature_names = []
 
     def fit_transform(self, corpus: list) -> list:
+        """Функция возвращает терм-документную матрицу для corpus
+        """
         lower_corpus = self.fit(corpus)
         count_matrix = self.transform(lower_corpus)
 
         return count_matrix
 
     def fit(self, corpus: list) -> list:
+        """Функция формирует список уникальных слов в тексте
+        и возвращает текст, приведенный к единому регистру и разбитый на слова.
+        """
+
         feature_names = set()
         lower_corpus = []
         for line in corpus:
@@ -34,6 +37,9 @@ class CountVectorizer():
         return lower_corpus
 
     def transform(self, lower_corpus: list) -> list:
+        """Функция считает количество вхождений каждого слова в текст
+        (формирует терм-документную матрицу для corpus)
+        """
         count_matrix = []
         for line_num, line in enumerate(lower_corpus):
             count_matrix.append([])
@@ -44,6 +50,9 @@ class CountVectorizer():
         return count_matrix
 
     def get_feature_names(self) -> list:
+        """Функция возвращает параметр класса feature_names
+        - список уникальных слов в corpus(исходный текст)
+        """
         return self.feature_names
 
 
