@@ -1,5 +1,6 @@
 from math import log
 from collections import Counter
+from typing import List
 
 
 class TfIdfTransformer():
@@ -89,7 +90,7 @@ class CountVectorizer():
 
         return lower_corpus
 
-    def transform(self, lower_corpus: list) -> list:
+    def transform(self, lower_corpus: List[str]) -> List[List[int]]:
         """Функция считает количество вхождений каждого слова в текст
         (формирует терм-документную матрицу для corpus)
         """

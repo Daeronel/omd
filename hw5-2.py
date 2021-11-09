@@ -8,7 +8,7 @@ class GetAttributes:
             if keyword.iskeyword(key):
                 key = f'{key}_'
             if key == 'price':
-                key = f'{key}__'
+                key = f'__{key}'
             if isinstance(value, dict):
                 setattr(self, key, GetAttributes(value))
             else:
@@ -38,10 +38,10 @@ class Advert(ColorizeMixin, BaseAdvert):
     @property
     def price(self):
         if hasattr(self, 'price__'):
-            if self.price__ < 0:
+            if self.__price < 0:
                 raise ValueError('Attribute price must be >= 0')
             else:
-                return self.price__
+                return self.__price
         else:
             return 0
 
