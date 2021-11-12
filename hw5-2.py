@@ -8,7 +8,7 @@ class GetAttributes:
             if keyword.iskeyword(key):
                 key = f'{key}_'
             if key == 'price':
-                key = f'__{key}'
+                key = f'_{key}'
             if isinstance(value, dict):
                 setattr(self, key, GetAttributes(value))
             else:
@@ -21,7 +21,7 @@ class BaseAdvert(GetAttributes):
         super().__init__(json_dict)
 
     def __repr__(self):
-        return f'{self.title} | {self.price} ₽'
+        return f'{self.title} | {self._price} ₽'
 
 
 class ColorizeMixin:
@@ -37,11 +37,11 @@ class Advert(ColorizeMixin, BaseAdvert):
 
     @property
     def price(self):
-        if hasattr(self, 'price__'):
-            if self.__price < 0:
+        if hasattr(self, '_price'):
+            if self._price < 0:
                 raise ValueError('Attribute price must be >= 0')
             else:
-                return self.__price
+                return self._price
         else:
             return 0
 
