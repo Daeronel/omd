@@ -46,4 +46,43 @@ test_morse_decode.py ...                                                        
 
 3. issue-03
 
+(test) C:\Users\user\PycharmProjects\omd\hw6>python -m unittest test_unittest_ohe.py
+....
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+OK
+
+4. issue-04
+
+(test) C:\Users\user\PycharmProjects\omd\hw6>python -m pytest test_pytest_ohe.py
+======================================================================= test session starts =======================================================================
+platform win32 -- Python 3.7.6, pytest-6.2.4, py-1.10.0, pluggy-0.13.1
+rootdir: C:\Users\user\PycharmProjects\omd\hw6
+collected 5 items
+
+test_pytest_ohe.py .....                                                                                                                                     [100%]
+
+======================================================================== 5 passed in 0.04s ========================================================================
+
+5. issue-05
+
+(test) C:\Users\user\PycharmProjects\omd\hw6>python -m pytest test_what_year.py
+======================================================================= test session starts =======================================================================
+platform win32 -- Python 3.7.6, pytest-6.2.4, py-1.10.0, pluggy-0.13.1
+rootdir: C:\Users\user\PycharmProjects\omd\hw6
+collected 3 items
+
+test_what_year.py ...                                                                                                                                        [100%]
+
+======================================================================== 3 passed in 0.88s ========================================================================
+
+
+(test) C:\Users\user\PycharmProjects\omd\hw6\issue5>coverage report -m
+Name                  Stmts   Miss  Cover   Missing
+---------------------------------------------------
+test_what_year.py        19      0   100%
+what_is_year_now.py      19      0   100%
+---------------------------------------------------
+TOTAL                    38      0   100%
 
