@@ -1,0 +1,49 @@
+1. issue-01
+(test) C:\Users\user\PycharmProjects\omd\hw6>python -m doctest -v morse.py
+Trying:
+    encode('SOS')
+Expecting:
+    '... --- ...'
+ok
+Trying:
+    encode('CAT/DOG?')
+Expecting:
+    '-.-. .- - -..-. -.. --- --. ..--..'
+ok
+Trying:
+    encode('2021')
+Expecting:
+    '..--- ----- ..--- .----'
+ok
+Trying:
+    encode('cat') # doctest: +ELLIPSIS
+Expecting:
+    Traceback (most recent call last):
+    ...
+    KeyError: 'c'
+ok
+2 items had no tests:
+    morse
+    morse.decode
+1 items passed all tests:
+   4 tests in morse.encode
+4 tests in 3 items.
+4 passed and 0 failed.
+Test passed.
+
+
+2. issue-02
+
+(test) C:\Users\user\PycharmProjects\omd\hw6>python -m pytest test_morse_decode.py
+========================================= test session starts =========================================
+platform win32 -- Python 3.7.6, pytest-6.2.4, py-1.10.0, pluggy-0.13.1
+rootdir: C:\Users\user\PycharmProjects\omd\hw6
+collected 3 items
+
+test_morse_decode.py ...                                                                         [100%]
+
+========================================== 3 passed in 0.03s ==========================================
+
+3. issue-03
+
+
