@@ -67,22 +67,23 @@ test_pytest_ohe.py .....                                                        
 
 5. issue-05
 
-(test) C:\Users\user\PycharmProjects\omd\hw6>python -m pytest test_what_year.py
-======================================================================= test session starts =======================================================================
+(test) C:\Users\user\PycharmProjects\omd\hw6\issue5>python -m pytest test_what_year.py
+============================================================================================== test session starts ==============================================================================================
 platform win32 -- Python 3.7.6, pytest-6.2.4, py-1.10.0, pluggy-0.13.1
-rootdir: C:\Users\user\PycharmProjects\omd\hw6
+rootdir: C:\Users\user\PycharmProjects\omd\hw6\issue5
 collected 3 items
 
-test_what_year.py ...                                                                                                                                        [100%]
+test_what_year.py ...                                                                                                                                                                                      [100%]
 
-======================================================================== 3 passed in 0.88s ========================================================================
+=============================================================================================== 3 passed in 0.33s ===============================================================================================
 
 
 (test) C:\Users\user\PycharmProjects\omd\hw6\issue5>coverage report -m
 Name                  Stmts   Miss  Cover   Missing
 ---------------------------------------------------
-test_what_year.py        19      0   100%
+test_what_year.py        20      0   100%
 what_is_year_now.py      19      0   100%
 ---------------------------------------------------
-TOTAL                    38      0   100%
+TOTAL                    39      0   100%
+
 
